@@ -20,7 +20,7 @@ class User(models.Model):
   test9 = models.IntegerField()
   test10 = models.IntegerField()
   test = models.IntegerField()
-  
+
   def __str__(self):
     return self.name
   
