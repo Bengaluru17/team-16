@@ -1,6 +1,7 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.models import User
 
 from .forms import LoginForm,SignupForm
@@ -44,6 +45,11 @@ def user_signup(request):
                       {'form': user_form})
 
 
+@login_required
+def logout_view(request):
+    logout(request)
+    return HttpResponse("Logut Successful")
 
+@login_required
 def level1(request):
     return render(request,'l1t1.html')
