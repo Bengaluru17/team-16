@@ -10,6 +10,7 @@ class User(models.Model):
   isAdmin = models.BooleanField()
   score = models.IntegerField()
   level = models.IntegerField()
+  test1 = models.IntegerField()
   test2 = models.IntegerField()
   test3 = models.IntegerField()
   test4 = models.IntegerField()
