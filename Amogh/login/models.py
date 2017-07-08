@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
+from django.contrib.auth.models import User
 from django.db import models
 
-class User(models.Model):
-  name = models.CharField(max_length=100, unique=True)
-  email = models.EmailField(max_length=100, unique=True)
-  password = models.CharField(max_length=100, default='qwerty')
+
+class Student(models.Model):
+  name = models.ForeignKey(User, related_name='student')
   isAdmin = models.BooleanField()
   score = models.IntegerField()
   level = models.IntegerField()
