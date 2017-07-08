@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.http import HttpResponse
 from django.contrib.auth import login
 from django.shortcuts import render
-from .forms import LoginForm
+from .forms import LoginForm, SignupForm
 from .models import User
 
 
@@ -28,3 +28,17 @@ def user_login(request):
         else:
             form = LoginForm()
         return render(request, 'login.html', {'form': form})
+
+
+def user_signup(request):
+    if request.method == 'POST':
+        form = SignupForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            User.objects.create(name=cd['username'], password=cd['password'], email=cd['email'], isadmin=False, score=0,
+                                level=0)
+            User.save()
+            return HttpResponse('Authenticated successfully')
+        else:
+            form = SignupForm()
+        return render(request, 'signup.html', {'form': form})
