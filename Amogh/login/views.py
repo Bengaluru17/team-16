@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 
@@ -16,7 +16,7 @@ def user_login(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return HttpResponse('Authenticated successfully')
+                    return redirect(level1)
                 else:
                     return HttpResponse('Disabled account')
             else:
@@ -44,3 +44,6 @@ def user_signup(request):
                       {'form': user_form})
 
 
+
+def level1(request):
+    return render(request,'l1t1.html')

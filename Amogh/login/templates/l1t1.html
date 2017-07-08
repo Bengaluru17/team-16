@@ -1,0 +1,257 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+
+<head>
+<title>LEVEL 1 - TEST 1</title>
+
+
+<script type="text/javascript">
+
+var errno=0;
+
+function valname(elem)
+{
+  var n = document.getElementById(elem).value;
+  if(n.match(/^[a-zA-Z]*$/))
+  		{  		}
+    else
+      {
+        document.getElementById('msg').innerHTML = "ENTER only alphabets"
+        errno=errno+1
+    	}
+    console.log(errno);
+
+
+}
+
+
+function valage()
+{
+  var n = document.getElementById("age").value;
+  if(n.match(/^[0-99]$/))
+  		{  		}
+    else
+      {
+        document.getElementById('msg').innerHTML = "ENTER only numbers"
+        errno=errno+1;
+    	}
+      console.log(errno);
+
+}
+
+
+
+
+function valgender()
+{
+
+  l=document.getElementById("M").checked
+  m=document.getElementById("F").checked
+  n=document.getElementById("O").checked
+
+  if ((l == false) && (m == false) && (n == false))
+    {
+        document.getElementById('msg').innerHTML = "Please choose your gender"
+        errno=errno+1;
+    }
+
+    console.log(errno);
+
+}
+
+
+function valclass()
+{
+  var n = parseInt(document.getElementById("cls").value);
+  if((n>1)||(n<12))
+  		{  		}
+    else
+      {
+        document.getElementById('msg').innerHTML = "ENTER only numbers between 1 and 12"
+        errno=errno+1;
+    	}
+      console.log(errno);
+
+}
+
+
+
+
+function checkItem()
+{for(count=0;count<8;count++)
+{if (MyForm.bg[count].checked)
+{b=true;
+  break;
+}
+else {
+  b=false
+}
+}
+if(b==false)
+{
+  document.getElementById('msg').innerHTML = "Please choose your blood group"
+  errno=errno+1;
+}
+console.log(errno);
+}
+
+function valsect()
+{
+  var n = document.getElementById("section").value;
+  console.log(n)
+  if(n.match(/^[A-Z]$/))
+  		{  		}
+    else
+      {
+        document.getElementById('msg').innerHTML = "ENTER only one alphabet"
+        errno=errno+1
+    	}
+    console.log(errno);
+
+
+}
+
+function valadd()
+{
+  var n = document.getElementById("address").value;
+  console.log(n);
+  if(n.length==0)
+  		{
+        document.getElementById('msg').innerHTML = "ENTER address"
+        errno=errno+1
+    	}
+    console.log(errno);
+
+
+}
+
+function valcont()
+{
+  var n = document.getElementById("contact").value;
+  if(n.match(/^[0-9]{10}$/))
+  		{  		}
+    else
+      {
+        document.getElementById('msg').innerHTML = "ENTER only 10 numbers"
+        errno=errno+1;
+    	}
+      console.log(errno);
+
+}
+
+
+
+function valfull()
+{
+  var n1 = document.getElementById("school_name").value;
+    if(n1.length==0)
+    {
+      document.getElementById('msg').innerHTML = "ENTER school name"
+      errno=errno+1;
+      return false;
+    }
+  var n2 = document.getElementById("student_name").value;
+  if(n2.length==0)
+  {
+    document.getElementById('msg').innerHTML = "ENTER student name"
+    errno=errno+1;
+    return false;
+  }
+  var n3 = document.getElementById("father_name").value;
+  if(n3.length==0)
+  {
+    document.getElementById('msg').innerHTML = "ENTER father name"
+    errno=errno+1;
+    return false;
+  }
+  var n4 = document.getElementById("age").value;
+  if(n4.length==0)
+  {
+    document.getElementById('msg').innerHTML = "ENTER age"
+    errno=errno+1;
+  }
+  valgender();
+  var n5 = document.getElementById("cls").value;
+  if(n5.length==0)
+  {
+    document.getElementById('msg').innerHTML = "ENTER class"
+    errno=errno+1;
+  }
+  var n6 = document.getElementById("section").value;
+  if(n6.length==0)
+  {
+    document.getElementById('msg').innerHTML = "ENTER section"
+    errno=errno+1;
+  }
+  checkItem();
+  var n7 = document.getElementById("address").value;
+  if(n7.length==0)
+  {
+    document.getElementById('msg').innerHTML = "ENTER address"
+    errno=errno+1;
+  }
+  var n8 = document.getElementById("contact").value;
+  if(n8.length==0)
+  {
+    document.getElementById('msg').innerHTML = "ENTER contact"
+    errno=errno+1;
+  }
+
+}
+
+
+</script>
+
+
+
+
+
+<head>
+
+<body>
+
+<form id = "" action="" name="MyForm">
+
+<p>
+<legend>FORM </br></br></br>
+
+NAME OF THE SCHOOL&nbsp; &nbsp; &nbsp;<input type="textbox" id="school_name" onblur="valname(this.id)"/></br></br>
+NAME OF STUDENT&nbsp; &nbsp; &nbsp;<input type="textbox" id="student_name" onblur="valname(this.id)"/></br></br>
+NAME OF FATHER&nbsp; &nbsp; &nbsp;<input type="textbox" id="father_name" onblur="valname(this.id)"/></br></br>
+AGE&nbsp; &nbsp; &nbsp;<input type="textbox" id="age" onblur="valage()"/></br></br>
+
+GENDER</br>
+<input type="radio" name="gender" id="M" value="M"/>MALE</input></br>
+<input type="radio" name="gender" id="F" value="F">FEMALE</input></br>
+<input type="radio" name="gender" id="O" value="O">DO NOT DISCLOSE</input></br></br>
+
+cls&nbsp; &nbsp; &nbsp;<input type="textbox" id="cls" onblur="valclass()"/></br></br>
+SECTION&nbsp; &nbsp; &nbsp;<input type="textbox" id="section" onblur="valsect()"/></br></br>
+
+BLOOD GROUP</br>
+<input type="radio" name="bg">A+</input>
+<input type="radio" name="bg">B+</input>
+<input type="radio" name="bg">AB+</input>
+<input type="radio" name="bg">O+</input></br>
+<input type="radio" name="bg">A-</input>&nbsp;
+<input type="radio" name="bg">B-</input>&nbsp;&nbsp;
+<input type="radio" name="bg">AB-</input>&nbsp;
+<input type="radio" name="bg">O-</input></br></br>
+
+
+
+ADDRESS&nbsp; &nbsp; &nbsp;<input type="textbox" id="address" onblur="valadd()"/></br></br>
+CONTACT &nbsp; &nbsp; &nbsp; <input type="textbox" id="contact" onblur="valcont()"/></br></br>
+<input type="button" id="submit" value="SUBMIT" onclick="valfull()"/></br></br>
+
+</legend>
+</form>
+
+
+</br></br>
+<p id = "msg">hello</p></br></br>
+
+
+
+</body>
+</html>
