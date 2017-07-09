@@ -25,4 +25,5 @@ class Student(models.Model):
     return self.name
 
 
-  
+
+

@@ -2,8 +2,27 @@
 
 
 <head>
-<title>LEVEL 1 - TEST 1</title>
+<title>Registration form</title>
+<link rel='stylesheet' type='text/css' href='/static/design.css'/>
+<link type="text/css" rel="stylesheet" href="/static/design1.css">
+<link rel='stylesheet' type='text/css' href='/static/stylesheet.css'/>
+        <link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'/>
+        <script type='text/javascript' src='script.js'></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
 
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+  <script>
+  $(document).ready(function() {
+    $("#datepicker").datepicker();
+  });
+  </script>
 
 <script type="text/javascript">
 
@@ -196,7 +215,10 @@ function valfull()
     document.getElementById('msg').innerHTML = "ENTER contact"
     errno=errno+1;
   }
-
+  else if(/[^0-9]/.test(n8))
+  {
+     alert("CONTACT: Please enter only numbers");
+   }
 }
 
 
@@ -210,22 +232,50 @@ function valfull()
 
 <body>
 
+<div class="w3-top">
+<ul class="w3-navbar w3-black w3-card-2 w3-left-align">
+  <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
+    <a class="w3-padding-large" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+  </li>
+  <li><a href="/login/level3/" class="w3-hover-none w3-hover-text-grey w3-padding-large">Amogha</a></li>
+  
+  <li class="w3-hide-small"><a href="/login/logout/" class="w3-padding-large">Logout</a></li>
+  
+  <li class="w3-hide-small w3-dropdown-hover">
+    <a href="javascript:void(0)" class="w3-hover-none w3-padding-large" title="More">Levels <i class="fa fa-caret-down"></i></a>     
+    <div class="w3-dropdown-content w3-white w3-card-4">
+      <a href="/login/level1/">Level 1</a>
+      <a href="/login/level2/">Level 2</a>
+      <a href="/login/level3/">Level 3</a>
+      <a href="/login/level4/">Level 4</a>
+      <a href="/login/level5">Level 5</a>
+    </div>
+  </li>
+
+  <li class="w3-hide-small" id="pp">REGISTRATION FORM</li>
+  <!--<li class="w3-hide-small w3-right"><a href="javascript:void(0)" class="w3-padding-large w3-hover-red"><i class="fa fa-search"></i></a></li>-->
+</ul>
+</div>
+
+
 <form id = "" action="" name="MyForm">
 
-<p>
-<legend>FORM </br></br></br>
 
-NAME OF THE SCHOOL&nbsp; &nbsp; &nbsp;<input type="textbox" id="school_name" onblur="valname(this.id)"/></br></br>
+<div class="a1">
+<div class="a3">
 NAME OF STUDENT&nbsp; &nbsp; &nbsp;<input type="textbox" id="student_name" onblur="valname(this.id)"/></br></br>
-NAME OF FATHER&nbsp; &nbsp; &nbsp;<input type="textbox" id="father_name" onblur="valname(this.id)"/></br></br>
-AGE&nbsp; &nbsp; &nbsp;<input type="textbox" id="age" onblur="valage()"/></br></br>
+NAME OF PARENT/GUARDIAN&nbsp; &nbsp; &nbsp;<input type="textbox" id="father_name" onblur="valname(this.id)"/></br></br>
+
+
+<label>DATE OF BIRTH</label></br>
+<input id="datepicker"/>&nbsp;&lt-----Please click here</br></br>
 
 GENDER</br>
 <input type="radio" name="gender" id="M" value="M"/>MALE</input></br>
 <input type="radio" name="gender" id="F" value="F">FEMALE</input></br>
 <input type="radio" name="gender" id="O" value="O">DO NOT DISCLOSE</input></br></br>
 
-cls&nbsp; &nbsp; &nbsp;<input type="textbox" id="cls" onblur="valclass()"/></br></br>
+CLASS&nbsp; &nbsp; &nbsp;<input type="textbox" id="cls" onblur="valclass()"/></br></br>
 SECTION&nbsp; &nbsp; &nbsp;<input type="textbox" id="section" onblur="valsect()"/></br></br>
 
 BLOOD GROUP</br>
@@ -242,14 +292,15 @@ BLOOD GROUP</br>
 
 ADDRESS&nbsp; &nbsp; &nbsp;<input type="textbox" id="address" onblur="valadd()"/></br></br>
 CONTACT &nbsp; &nbsp; &nbsp; <input type="textbox" id="contact" onblur="valcont()"/></br></br>
+<label>Please select the date of birth</label></br>
+<input id="datepicker" /></br></br>
 <input type="button" id="submit" value="SUBMIT" onclick="valfull()"/></br></br>
 
 </legend>
 </form>
-
-
+</div>
+</div>
 </br></br>
-<p id = "msg">hello</p></br></br>
 
 
 

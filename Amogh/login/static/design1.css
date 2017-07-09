@@ -1,0 +1,45 @@
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+#map {   height: 400px;
+        width: 100%;
+       }
+       input[type=text] {
+    width: 200px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-size: 25px 25px;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.5s ease-in-out;
+    transition: width 0.5s ease-in-out;
+margin: 10% 50% 5% 30%;
+}
+.img1
+{
+	filter: grayscale(100%);
+}
+.img2
+{
+	filter: grayscale(100%);
+}
+.img3
+{
+	filter: grayscale(100%);
+}
+
+input[type=text]:focus {
+    width: 45%;
+}
+#search
+{
+  background-image: url(me4.jpg);
+  filter: grayscale(100%);
+}
+.mySlides w3-display-container w3-center{
+  filter: filter: grayscale(100%);
+}

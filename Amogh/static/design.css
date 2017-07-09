@@ -1,0 +1,63 @@
+body
+{
+  background: url("image.jpg") no-repeat fixed ;
+  -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-style:italic;  
+}
+.a1
+{
+	width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+  margin-top: -90px;
+  
+}
+.a3
+{
+	opacity:0.9;
+  background:#e6e6e6;
+  max-width: 550px;
+  padding: 40px;
+  margin-top:0px;
+  margin-left: -80px;
+  margin-right: -1200px;
+
+  font-size: 18px;
+  box-shadow: 0 5px 5px 0 #000000;
+
+}
+.a3 button:hover,button :active {
+  transform: translate(1px,1px);
+}
+.a3 button {
+  font-family: "alargia";
+  text-transform: uppercase;
+  background: #309ef2;
+  width: 100%;
+  padding: 15px;
+  color: #242728;
+  font-size: 14px;
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+}
+#p1
+{
+	font-size: 40px;
+	color:black;
+	font-weight: bold;
+    font-family: "Times New Roman";
+    text-align:center;
+    margin-top: 40px;
+}
+#pp
+{
+	text-align: center;
+	margin-left: 500px;
+	margin-top: 2px;
+	font-size:20px;
+	padding-left:300px;
+}
